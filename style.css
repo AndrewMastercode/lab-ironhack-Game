@@ -1,0 +1,186 @@
+body {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+#game-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 50%;
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 40px;
+  background-image: url('images/main-screen.jpg');
+  color: yellow;
+}
+
+#game-intro.inactive {
+  -webkit-animation: slide-out-top 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-top 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@-webkit-keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
+#game-intro h1{
+  color: azure;
+  margin-top: 80px;
+}
+
+#game-intro p {
+  margin-top: 80px;
+}
+
+body button {
+  font-size: 20px;
+  background-color: #870007;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-top: 100px;
+  
+}
+
+#main-play-area {
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  width: 1300px;
+  height: 600px;
+  background-image: url('images/game-screen.png');
+}
+#main-play-area.active {
+  
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  visibility: visible;
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+	        animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+  padding: 40px;
+}
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#instructions-text {
+  position: relative;
+  color: white;
+  left: 155px;
+  top: 0px;
+  text-shadow: 2px 2px black;
+}
+
+#start-button:hover {
+  cursor: pointer;
+}
+
+#player-controlled-shooter {
+  width: 60px;
+  height: 80px;
+  position: relative;
+  left: 0px;
+  top: 300px;
+}
+
+.laser {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.planet {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.planet-transition {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
+
+.monster {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:
+       0 0 6px 3px #fff,
+       0 0 5px 6px rgb(173, 124, 173),
+       0 0 9px 9px #0ff;
+}
+
+.monster-transition {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
+
+
+.dead-monster {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  opacity: 0;
+}
